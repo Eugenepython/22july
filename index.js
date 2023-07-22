@@ -83,7 +83,7 @@ passport.use(
 );
 
 app.get('/', (req, res) => {
-  res.send('Hello, world!');
+  res.send('Hello, world! this is 16th July app');
 });
 
   app.get(
