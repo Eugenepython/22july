@@ -71,6 +71,9 @@ passport.use(
       proxy: true
     },
     (accessToken, refreshToken, profile, done) => {
+      console.log('Access Token:', accessToken);
+      console.log('Refresh Token:', refreshToken);
+      console.log('Profile:', profile);
       User.findOne({ googleId: profile.id }).then(existingUser => {
         if (existingUser) {
           done(null, existingUser)
@@ -85,6 +88,7 @@ passport.use(
 
 app.get('/', (req, res) => {
   res.send('Hello, world! this is 16th July app');
+  
 });
 
   app.get(
